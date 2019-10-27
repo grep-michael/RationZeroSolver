@@ -24,9 +24,9 @@ eval_list = []
 for q in q_list:
 	for p in p_list:
 		if p%q == 0: #evaluate if the fractor results in whole number
-			eval_list.append(str(p/q)) #add whole number
+			eval_list.append(str(p/q)) #append whole number to list
 		else:
-			eval_list.append('%d/%d'%(p,q)) #add fraction
+			eval_list.append('%d/%d'%(p,q)) #append fraction to whole list
 
 #create negitive variations of factors
 for i in range(len(eval_list)):
@@ -35,13 +35,13 @@ for i in range(len(eval_list)):
 
 
 #remove similar  elements from eval list
-eval_list = list(dict.fromkeys(eval_list))
+eval_list = list(dict.fromkeys(eval_list)) #this works because dictionarys can not have 2 of the same keys
 zero_list = []
 #add the decimal form of each number for use in euqation
 for x in eval_list:
 	zero_list.append(eval(x+'.00'))
 
-#loop through 
+#loop through rational zeros and print out the ones that equal zero
 for i in range(len(zero_list)):
 	if equation(zero_list[i]) == 0:
 		print eval_list[i]
